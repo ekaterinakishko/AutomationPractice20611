@@ -1,31 +1,43 @@
 import BasePage from './base.page';
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class LoginPage extends BasePage {
-    /**
-     * define selectors using getter methods
-     */
-    get inputUsername () { return $('#username') }
-    get inputPassword () { return $('#password') }
-    get btnSubmit () { return $('button[type="submit"]') }
 
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
+    get signInBtn () { return $('a.login') }
+    get createAnAccount () { return $('#email_create') }
+    get genderM () { return $('#id_gender1') }
+    get genderF () { return $('#id_gender2') }
+    get inputFirstName () { return $('#customer_firstname') }
+    get inputLastName () { return $('#customer_lastname') }
+    get inputPassword () { return $('#passwd') }
+    get days () { return $$('#days')[8] }
+    get months () { return $$('#months')[5] }
+    get years () { return $$('#years')[1995] }
+    get firstName () { return $('#firstname') }
+    get lastName () { return $('#lastname') }
+    get company () { return $('#company') }
+    get address () { return $('#address1') }
+    get city () { return $('#city') }
+    get state () { return $$('#id_state')[9] }
+    get zipCode () { return $('#postcode') }
+    get country () { return $('#id_country') }
+    get addInformation () { return $('#other') }
+    get phone () { return $('#phone_mobile') }
+    get aliasEmail () { return $('#alias') }
+    get btnSubmit () { return $('#submitAccount') }
+    get header () { return $('.page-heading') }
+
+
     login (username, password) {
         this.inputUsername.setValue(username);
         this.inputPassword.setValue(password);
-        this.btnSubmit.click(); 
+        this.btnSubmit.click();
     }
 
-    /**
-     * overwrite specifc options to adapt it to page object
-     */
+    // days (n) {
+    //     return $$('#days')[n];
+
     open () {
-        return super.open('login');
+        return super.open('/');
     }
 }
 
