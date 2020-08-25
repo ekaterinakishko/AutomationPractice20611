@@ -1,14 +1,16 @@
 import LoginPage from '../pages/login.page';
 import SecurePage from '../pages/secure.page';
+import BasePage from '../pages/base.page';
+import data from '../data/user';
+const user = require ('../data/user');
 
-describe('My Login application', () => {
-    it('should login with valid credentials', () => {
+describe('Create an account', () => {
+    it('should login new user', () => {
         LoginPage.open();
 
-        LoginPage.login('tomsmith', 'SuperSecretPassword!');
-        expect(SecurePage.flashAlert).toBeExisting();
-        expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!');
+        LoginPage.signInBtn.click();
+        expect(LoginPage.header.getText()).toEqual(user.new.header);
+
     });
 });
 
