@@ -134,5 +134,3 @@ Replace `beforeTest` function in wdio.conf js with following:
 ```json
     "report": "allure generate allure-results --clean && allure open",
 ```
-  
-
