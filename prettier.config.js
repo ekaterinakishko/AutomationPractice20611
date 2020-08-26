@@ -6,7 +6,7 @@ module.exports = {
     bracketSpacing: true,
     arrowParens: 'avoid',
     parser: 'babel',
-    printWidth: 100,
+    printWidth: 120,
 };
 
 //npm install prettier --save-dev
