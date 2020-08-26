@@ -9,9 +9,25 @@ describe('Create an account', () => {
         LoginPage.open();
 
         LoginPage.signInBtn.click();
-        expect(LoginPage.header.getText()).toEqual(user.new.header);
+        expect(LoginPage.header.getText()).toEqual(user.header);
+    });
+
+    it('should fill email field', function() {
+        LoginPage.createAnAccount.setValue(user.email);
+        LoginPage.createAnAccountBtn.click();
+        expect(LoginPage.header.getText()).toEqual(user.header);
+    });
+
+    it('should register new user', function() {
+        LoginPage.register(user);
+browser.pause(5000);
+//expect(LoginPage.)
+
+
 
     });
+
+
 });
 
 
