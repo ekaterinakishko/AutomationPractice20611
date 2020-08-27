@@ -140,9 +140,9 @@ class LoginPage extends BasePage {
     this.btnSubmit.click();
   }
 
-  // open() {
-  //   return super.open('/');
-  // }
+  open() {
+    return super.open('/');
+  }
 }
 
 export default new LoginPage();

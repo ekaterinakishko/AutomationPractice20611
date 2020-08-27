@@ -2,7 +2,7 @@ import LoginPage from '../pages/login.page';
 const user = require ('../data/user');
 
 before(()=>{
-  LoginPage.open('/');
+  LoginPage.open();
   browser.maximizeWindow();
 })
 
