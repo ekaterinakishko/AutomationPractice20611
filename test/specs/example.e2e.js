@@ -19,9 +19,30 @@ describe('Create an account and login with new user credentials', () => {
     //     expect(LoginPage.header.getText()).toEqual(user.header);
     // });
 
-    it('should register new user', function() {
+    xit('should register new user', function() {
         LoginPage.register(user);
-        expect(LoginPage.accountName.getText()).toEqual(user.firstName +" "+user.lastName);
+        expect(LoginPage.accountNameHeaderTab.getText()).toEqual(user.firstName +" "+user.lastName);
+
+    });
+    xit('should login as a new user', function() {
+        LoginPage.open('/index.php?controller=authentication&back=my-account')
+        //LoginPage.signOutBtn.click()
+        LoginPage.login(user)
+        expect(LoginPage.accountNameHeaderTab.getText()).toEqual(user.firstName +" "+user.lastName);
+    });
+
+    it('should find T-shirt section', function() {
+        LoginPage.womanTab.moveTo()
+        browser.pause(3000)
+        LoginPage.tShirtsItem.click()
+        browser.elementHover($(".product-container"))
+        $(".product-container").moveTo()
+        browser.pause(5000)
+        $(".button lnk_view btn btn-default").click()
+        browser.pause(5000)
+
+
+
     });
 
 

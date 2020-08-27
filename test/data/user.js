@@ -1,7 +1,8 @@
 const user = {
   // new: {
   header: 'AUTHENTICATION',
-  email: '4vanivanov@gmail.com',
+  email: Math.random().toFixed(10) + `@gmail.com`,
+  userEmail: 'ivanivanov@gmail.com',
   firstName: 'Ivan',
   lastName: 'Ivanov',
   password: '123456',

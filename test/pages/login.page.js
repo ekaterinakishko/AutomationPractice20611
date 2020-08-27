@@ -75,14 +75,36 @@ class LoginPage extends BasePage {
   get header() {
     return $('.page-heading');
   }
-  get accountName() {
+  get accountNameHeaderTab() {
     return $('.account');
   }
+  get loginEmail(){
+    return $('#email')
+  }
+  get loginPassword(){
+    return $('#passwd')
+  }
+  get loginSignInBtn(){
+    return $('#SubmitLogin')
+  }
+  get signOutBtn(){
+    return $('.logout')
+  }
+  get womanTab(){
+    return $('.sf-with-ul')
+  }
+  get tShirtsItem (){
+    return $("//a[contains(text(),'T-shirts')]")
+  }
 
-  login(username, password) {
-    this.inputUsername.setValue(username);
-    this.inputPassword.setValue(password);
-    this.btnSubmit.click();
+  login(tempUser) {
+    this.loginEmail.setValue(tempUser.userEmail);
+    this.loginPassword.setValue(tempUser.password);
+    this.loginSignInBtn.click();
+  }
+
+  signOut(){
+
   }
 
   register(tempUser,email=tempUser.email) {
@@ -110,9 +132,9 @@ class LoginPage extends BasePage {
     this.btnSubmit.click();
   }
 
-  open() {
-    return super.open('/');
-  }
+  // open() {
+  //   return super.open('/');
+  // }
 }
 
 export default new LoginPage();
