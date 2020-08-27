@@ -107,15 +107,26 @@ class LoginPage extends BasePage {
   get firstItem(){
     return $(".product-container")
   }
+  get itemQty(){
+    return $("#quantity_wanted")
+  }
+  get itemSize(){
+    return $("#group_1")
+  }
+  get blueColor(){
+    return $('#color_14')
+  }
+  get addToCartBtn(){
+    return $("#add_to_cart")
+  }
+  get itemsAddedMessage(){
+    return $("h2")
+  }
 
   login(tempUser) {
     this.loginEmail.setValue(tempUser.userEmail);
     this.loginPassword.setValue(tempUser.password);
     this.loginSignInBtn.click();
-  }
-
-  signOut(){
-
   }
 
   register(tempUser,email=tempUser.email) {
@@ -143,9 +154,9 @@ class LoginPage extends BasePage {
     this.btnSubmit.click();
   }
 
-  // open() {
-  //   return super.open('/');
-  // }
+  open() {
+    return super.open('/index.php?controller=authentication&back=my-account');
+  }
 }
 
 export default new LoginPage();
