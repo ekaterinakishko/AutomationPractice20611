@@ -10,9 +10,10 @@ describe('Choose T-shirt', () => {
 
       it('should find T-shirt section', function() {
         LoginPage.womanTab.moveTo()
+        LoginPage.tShirtsItem.waitForDisplayed()
         LoginPage.tShirtsItem.click()
-        LoginPage.firsItem.scrollIntoView()
-        LoginPage.moreBtn.waitForDisplayed({ timeout: 3000 })
+        LoginPage.pageBottom.scrollIntoView()
+        LoginPage.firstItem.moveTo()
         LoginPage.moreBtn.click()
 
     });

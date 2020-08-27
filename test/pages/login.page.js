@@ -97,12 +97,15 @@ class LoginPage extends BasePage {
     return $("//a[contains(text(),'T-shirts')]")
   }
 
-  get firsItem(){
-    return $$('.product-name')[2]
+  get pageBottom(){
+    return $(".product-count")
   }
 
   get moreBtn(){
     return $("//span[contains(text(),'More')]")
+  }
+  get firstItem(){
+    return $(".product-container")
   }
 
   login(tempUser) {
