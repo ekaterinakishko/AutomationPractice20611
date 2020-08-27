@@ -97,6 +97,14 @@ class LoginPage extends BasePage {
     return $("//a[contains(text(),'T-shirts')]")
   }
 
+  get firsItem(){
+    return $$('.product-name')[2]
+  }
+
+  get moreBtn(){
+    return $("//span[contains(text(),'More')]")
+  }
+
   login(tempUser) {
     this.loginEmail.setValue(tempUser.userEmail);
     this.loginPassword.setValue(tempUser.password);
