@@ -16,7 +16,11 @@ const user = {
   accountHeader: 'CREATE AN ACCOUNT',
   day: '8',
   month: '5',
-  year: '1995'
+  year: '1995',
+  items: "2",
+  sizeLarge: '3',
+  itemsAddedToCartMsg:'Product successfully added to your shopping cart',
+  orderConfirmationMsg: 'Your order on My Store is complete.'
 
   // }
 };
