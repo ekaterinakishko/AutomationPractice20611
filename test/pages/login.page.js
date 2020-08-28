@@ -94,7 +94,7 @@ class LoginPage extends BasePage {
     return $('.sf-with-ul')
   }
   get tShirtsItem (){
-    return $("//a[contains(text(),'T-shirts')]")
+    return $("//ul[@class='submenu-container clearfix first-in-line-xs']//ul//li//a[contains(text(),'T-shirts')]")//"//a[contains(text(),'T-shirts')]")
   }
 
   get pageBottom(){
