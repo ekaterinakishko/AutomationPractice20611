@@ -39,9 +39,35 @@ class CheckoutPage extends BasePage {
   return $$('.product-container')
 }
 
-get discount (){
-    return $$('.price-percent-reduction')
+// get discount (){
+//     //return $$('.price-percent-reduction')
+//   return $$('.product_list.grid.row .price-percent-reduction')
+// }
+
+// get addToCartBtn (){
+//     return $$('.button.ajax_add_to_cart_button.btn.btn-default')
+// }
+
+get products (){
+    return $$('.right-block')
 }
+
+product (index){
+    return this.products[index]
+}
+
+discount (index){
+    return this.product(index).$('div.price-percent-reduction')
+}
+
+  addToCartBtn (index){
+    return this.product(index).$('.button.ajax_add_to_cart_button.btn.btn-default')
+  }
+
+  get manufacturer(){
+    return $$('.layered_subtitle')[5]
+  }
+
 
 }
 export default new CheckoutPage();
