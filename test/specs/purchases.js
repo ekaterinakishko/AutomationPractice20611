@@ -31,21 +31,14 @@ describe('ADDING AND PURCHASING ITEMS', () => {
     CheckoutPage.manufacturer.scrollIntoView();
     let arr =[];
     for(let i = 0; i < CheckoutPage.products.length; i++){
-      console.log('-------------')
-      console.log(CheckoutPage.discount(i))
-      console.log('-------------')
-      if(CheckoutPage.discount(i) !== null){
-
-        arr.push(CheckoutPage.discount(i).getText().split('%')[0])
+      if(CheckoutPage.discount(i).isExisting()){
+        arr.push(parseInt(CheckoutPage.discount(i).getText().split('%')[0]));
       }
       else {arr.push(0)}
     }
     let maxDiscount = Math.min(...arr);
     let index = arr.indexOf(maxDiscount);
-    // console.log('-------------')
-    // console.log(maxDiscount)
-    // console.log(discountItems)
-    // console.log('-------------')
+    CheckoutPage.product(index).moveTo();
     CheckoutPage.addToCartBtn(index).click();
   });
 });
