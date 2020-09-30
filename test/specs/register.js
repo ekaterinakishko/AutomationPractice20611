@@ -13,3 +13,4 @@ describe('Create an account and login with new user credentials', () => {
     expect(LoginPage.accountNameHeaderTab.getText()).toEqual(user.firstName + " " + user.lastName);
   })
 })
+
