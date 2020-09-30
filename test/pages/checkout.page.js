@@ -25,19 +25,15 @@ class CheckoutPage extends BasePage {
   get orderConfirmationMsg() {
     return $('.cheque-indent');
   }
-
   get dressesBtn() {
     return $$('.sf-with-ul')[3];
   }
-
   get summerDresses() {
     return $("//li[@class='sfHover']//a[contains(text(),'Summer Dresses')]");
   }
-
   get items() {
     return $$('.product-container');
   }
-
   // get discount (){
   //     //return $$('.price-percent-reduction')
   //   return $$('.product_list.grid.row .price-percent-reduction')
@@ -50,21 +46,18 @@ class CheckoutPage extends BasePage {
   get products() {
     return $$('.right-block');
   }
-
   product(index) {
     return this.products[index];
   }
-
   discount(index) {
     return this.product(index).$('div[itemprop = "offers"] > span.price-percent-reduction');
   }
-
   addToCartBtn(index) {
     return this.product(index).$('div.button-container > a[title = "Add to cart"]');
   }
-
   get manufacturer() {
     return $$('.layered_subtitle')[5];
   }
 }
 export default new CheckoutPage();
+
