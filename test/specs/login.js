@@ -13,3 +13,4 @@ describe('USER LOGIN', () => {
     expect(LoginPage.accountNameHeaderTab.getText()).toEqual(user.firstName + " " + user.lastName);
   });
 })
+
