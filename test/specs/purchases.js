@@ -42,3 +42,4 @@ describe('ADDING AND PURCHASING ITEMS', () => {
     CheckoutPage.addToCartBtn(index).click();
   });
 });
+
