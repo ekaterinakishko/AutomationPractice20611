@@ -5,7 +5,6 @@ class LoginPage extends BasePage {
   get signInBtn() {
     return $('a.login');
   }
-
   get createAnAccount() {
     return $('#email_create');
   }
@@ -96,11 +95,9 @@ class LoginPage extends BasePage {
   get tShirtsItem (){
     return $("//ul[@class='submenu-container clearfix first-in-line-xs']//ul//li//a[contains(text(),'T-shirts')]")//"//a[contains(text(),'T-shirts')]")
   }
-
   get pageBottom(){
     return $(".product-count")
   }
-
   get moreBtn(){
     return $("//span[contains(text(),'More')]")
   }
@@ -122,13 +119,11 @@ class LoginPage extends BasePage {
   get itemsAddedMessage(){
     return $("h2")
   }
-
   login(tempUser) {
     this.loginEmail.setValue(tempUser.userEmail);
     this.loginPassword.setValue(tempUser.password);
     this.loginSignInBtn.click();
   }
-
   register(tempUser,email=tempUser.email) {
     this.signInBtn.click();
     this.createAnAccount.setValue(`${email}`);
@@ -153,10 +148,9 @@ class LoginPage extends BasePage {
     this.aliasEmail.setValue(`${email}`);
     this.btnSubmit.click();
   }
-
   open() {
     return super.open('/index.php?controller=authentication&back=my-account');
   }
 }
-
 export default new LoginPage();
+
